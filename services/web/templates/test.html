@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <section id="webapp">
+        <nav class="hbox">
+            <h2>
+                MMO 2020 .
+            </h2>
+            <h2>
+                <select v-model="calcKhu" @change="getDataApi()">
+                    <option v-for="(khu,index) in listKhu" :selected="index === 0">
+                        {`khu`}
+                    </option>
+                </select>
+            </h2>
+        </nav>
+        <div class="vbox">
+            <div>calcDate={`calcDate`} - type={`typeof calcDate`} - len={`calcDate.length`} - calKhu={`calcKhu`} - calcLo={`calcLo`} - thoi={`Thoi`}</div>
+            <div>dataMienFatFit {`dataMienFatFit.length`}</div>
+            <div>dataByLo {`dataByLo.length`}</div>
+            <div>dataKq {`dataKq.length`}</div>
+            <div>dataRefs {`dataRefs.length`}</div>
+            <div>dataRef {`dataRef.length`}</div>
+            <div>thoiKq {`thoiKq.length`}</div>
+            <div>thoiRef {`thoiRef.length`}</div>
+            <div>thoiRefs {`thoiRefs.length`}</div>
+            <div>Nhan {`Nhan`}</div>
+            <div>dataApi = {`dataApi`}</div>
+        </div>
+    </section>
+{% end %}
+
+{% block script %}
+<script src="{{ static_url("test.js") }}"></script>
+{% end %}

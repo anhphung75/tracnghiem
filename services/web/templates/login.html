@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block menu_left %}
+{% if error %}
+<span style="color: red">Error: {{ error }}</span><p>
+{% end %}
+
+<form action="/auth/login" method="POST">
+  Email: <input name="email" type="text"><br>
+  Password: <input name="password" type="password"><br>
+  {% module xsrf_form_html() %}
+  <input type="submit">
+</form>
+{% end %}
+
+{% block webapp %}
+{`app`}
+{% end %}
+
+{% block script %}
+<script src="{{ static_url("auth/login.js") }}"></script>
+{% end %}
